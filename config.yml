@@ -1,0 +1,36 @@
+server:
+  rootPath: /api/*
+dateFormat: yyyy-MM-dd'T'HH:mmZ
+
+database:
+  # the name of your JDBC driver
+  driverClass: org.postgresql.Driver
+
+  # the username
+  user: sc13jt@dropwizard-db
+
+  # the password
+  password: Test1234!
+
+  # the JDBC URL
+  url: jdbc:postgresql://dropwizard-db.postgres.database.azure.com:5432/event?user=sc13jt@dropwizard-db&password=Test1234!&ssl=true
+
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+
+  # the SQL query to run when validating a connection's liveness
+  validationQuery: "/* MyApplication Health Check */ SELECT 1"
+
+  # the minimum number of connections to keep open
+  minSize: 8
+
+  # the maximum number of connections to keep open
+  maxSize: 32
+
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: false
